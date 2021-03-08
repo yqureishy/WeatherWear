@@ -6,25 +6,54 @@ searchButton.addEventListener('click', function(){
 
     let city = cityNameTextBox.value
 
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=d19d629f689bf144eebc7b0b3aee7004&units=imperial`)
+    fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${city}&key=dff6a3d2b47f4c738ef66cad6c012603&hours=48&units=I`)
     .then((response)=>{
         return (response.json())
-    }).then((json)=>{
+    }).then((result)=>{
+            console.log(result.data)
+                
+            for (let index = 0; index <=48; index++) {
+            
+            let allWeather = ((result.data[index]))
 
-    for (let index = 0; index <=39; index++) {
-        
-        let feelsLike = ((json.list[index].main.feels_like))
+            let displayTemp = ` 
+                            <li>
+                            Temp: ${allWeather.app_temp} --- Time: ${allWeather.timestamp_local}
+                            <br>
+                            <br>
+                            </li>`
 
-        let displayTemp = ` 
-                        <li>
-        
-                        Temp: ${feelsLike}
-
-                        </li>`
-
-        weatherUL.insertAdjacentHTML('beforeend', displayTemp)
+            weatherUL.insertAdjacentHTML('beforeend', displayTemp)
     
-    }
+        }
     })
     
 })
+
+
+// WEATHER BY LAT/LONG
+
+
+const successfulLookup = function(position){
+
+    const {latitude,longitude} = position.coords;
+    fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${city}&key=dff6a3d2b47f4c738ef66cad6c012603&hours=48&lat=${latitude}&lon=${longitude}&units=i`)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(result){
+        let weatherResultByCoordinates = 
+        `<li>
+            <b> Current Location: ${result.name}</b>
+            <p> Min Temp: ${result.main.temp_min}°F</p>
+            <p> Max Temp: ${result.main.temp_max}°F</p>
+            <p> Pressure: ${result.main.pressure} mbar</p>
+        </li>
+        `
+
+        latLongUL.innerHTML = weatherResultByCoordinates
+    })
+}
+
+console.log((navigator.geolocation.getCurrentPosition(successfulLookup,console.log)))
+
