@@ -27,6 +27,7 @@ searchButton.addEventListener('click', function(){
     
         }
     })
+
 })
     
 const successfulLookup = function(position){
@@ -34,6 +35,17 @@ const successfulLookup = function(position){
     const {latitude,longitude} = position.coords;
     console.log(latitude)
     console.log(longitude)
+
+    
+})
+
+
+// WEATHER BY LAT/LONG
+
+
+const successfulLookup = function(position){
+
+    const {latitude,longitude} = position.coords;
     fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${city}&key=dff6a3d2b47f4c738ef66cad6c012603&hours=48&lat=${latitude}&lon=${longitude}&units=i`)
     .then(function(response){
         return response.json()
@@ -51,3 +63,6 @@ const successfulLookup = function(position){
         latLongUL.innerHTML = weatherResultByCoordinates
     })
 }
+
+
+console.log((navigator.geolocation.getCurrentPosition(successfulLookup,console.log)))
