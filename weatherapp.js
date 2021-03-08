@@ -27,6 +27,15 @@ searchButton.addEventListener('click', function(){
     
         }
     })
+
+})
+    
+const successfulLookup = function(position){
+
+    const {latitude,longitude} = position.coords;
+    console.log(latitude)
+    console.log(longitude)
+
     
 })
 
@@ -55,5 +64,5 @@ const successfulLookup = function(position){
     })
 }
 
-console.log((navigator.geolocation.getCurrentPosition(successfulLookup,console.log)))
 
+console.log((navigator.geolocation.getCurrentPosition(successfulLookup,console.log)))
