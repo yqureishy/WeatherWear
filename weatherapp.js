@@ -1,6 +1,7 @@
 const cityNameTextBox = document.getElementById("cityNameTextBox")
 const searchButton = document.getElementById("searchButton")
 const weatherUL = document.getElementById("weatherUL")
+const latLongUL = document.getElementById("latLongUL")
 
 searchButton.addEventListener('click', function(){
 
@@ -12,13 +13,13 @@ searchButton.addEventListener('click', function(){
     }).then((result)=>{
             console.log(result.data)
                 
-            for (let index = 0; index <=48; index++) {
+            for (let index = 0; index <=47; index++) {
             
             let allWeather = ((result.data[index]))
 
             let displayTemp = ` 
                             <li>
-                            Temp: ${allWeather.app_temp} --- Time: ${allWeather.timestamp_local}
+                            Temp: ${allWeather.app_temp} --- Time: ${allWeather.timestamp_local} ---Clothing Apparel: ${clothingApparel(allWeather.app_temp)}
                             <br>
                             <br>
                             </li>`
@@ -31,29 +32,56 @@ searchButton.addEventListener('click', function(){
 })
 
 
+function clothingApparel(temp) {
+    if (temp > 80){
+        return  "tank top"
+    }
+    else if (temp <= 80 && temp > 70 ){
+        return  "t-shirt"
+    }
+    else if (temp <= 70 && temp > 60 ){
+        return "full sleeves shirt"
+    }
+    else if (temp <= 60 && temp > 50 ){
+        return "jacket"
+    }
+    else if (temp <= 50 && temp > 40 ){
+        return "overcoat"
+    }
+    else if (temp <= 40 && temp > 30 ){
+        return "overcoat"
+    }
+    else if (temp <= 30){
+        return  "jacket + overcoat + gloves"
+    }
+}
+
+
 // WEATHER BY LAT/LONG
 
 
-const successfulLookup = function(position){
 
-    const {latitude,longitude} = position.coords;
-    fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${city}&key=dff6a3d2b47f4c738ef66cad6c012603&hours=48&lat=${latitude}&lon=${longitude}&units=i`)
-    .then(function(response){
-        return response.json()
-    })
-    .then(function(result){
-        let weatherResultByCoordinates = 
-        `<li>
-            <b> Current Location: ${result.name}</b>
-            <p> Min Temp: ${result.main.temp_min}°F</p>
-            <p> Max Temp: ${result.main.temp_max}°F</p>
-            <p> Pressure: ${result.main.pressure} mbar</p>
-        </li>
-        `
+// const successfulLookup = function(position){
 
-        latLongUL.innerHTML = weatherResultByCoordinates
-    })
-}
+//     const {latitude,longitude} = position.coords;
+//     fetch(`https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=dff6a3d2b47f4c738ef66cad6c012603`)
+//     .then(function(response){
+//         console.log(response)
+//         return response.json()
+//     })
+//     .then(function(result){
 
-console.log((navigator.geolocation.getCurrentPosition(successfulLookup,console.log)))
+//             let displayTemp = ` 
+//                             <li>
+//                             Temp: ${result.data[0].app_temp} --- Time: ${result.data[0].timestamp_local}
+//                             <br>
+//                             <br>
+//                             </li>`
+
+//         latLongUL.innerHTML = displayTemp
+
+//     })
+// }
+
+// // console.log((navigator.geolocation.getCurrentPosition(successfulLookup,console.log)))
 
