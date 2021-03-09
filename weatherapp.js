@@ -12,9 +12,12 @@ searchButton.addEventListener('click', function(){
     }).then((result)=>{
             console.log(result.data)
                 
-            for (let index = 0; index <=48; index++) {
+            for (let index = 0; index <=47; index++) {
             
             let allWeather = ((result.data[index]))
+            console.log(allWeather)
+            console.log(allWeather.app_temp)
+
 
             let displayTemp = ` 
                             <li>
