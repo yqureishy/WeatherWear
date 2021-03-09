@@ -25,7 +25,7 @@ searchButton.addEventListener('click', function(){
                             <div class="weatherInfo">
                             <div>Time: ${allWeather.timestamp_local} |
                             Feels Like Temp: ${allWeather.app_temp}<span>&#176;</span></div>
-                            <div class="clothesDisplay">What to Wear: ${clothingApparel(allWeather.app_temp)}</div>
+                            <div class="clothesDisplay"> ${clothingApparel(allWeather.app_temp)}</div>
                             <br>
                             <br>
                             </div>`
@@ -49,27 +49,33 @@ const successfulLookup = function(position){
 
 function clothingApparel(temp) {
     if (temp > 80){
-        return  "tank top"
+        image = "<img src='/Users/wesleykolar/frontendproject/FrontendProject/clothes/tank-top.png'></img>";
+        return image
     }
     else if (temp <= 80 && temp > 70 ){
-        return  "t-shirt"
+        image = "<img src='/Users/wesleykolar/frontendproject/FrontendProject/clothes/tshirt.png'></img>";
+        return image
     }
     else if (temp <= 70 && temp > 60 ){
-        return "full sleeves shirt"
+        image = "<img src='/Users/wesleykolar/frontendproject/FrontendProject/clothes/long-sleeve.png'></img>";
+        return image
     }
     else if (temp <= 60 && temp > 50 ){
-        return "jacket"
+        image= "<img src= '/Users/wesleykolar/frontendproject/FrontendProject/clothes/hoodie.png'></img>";
+        return image
     }
     else if (temp <= 50 && temp > 40 ){
-        return "overcoat"
+        image= "<img src= '/Users/wesleykolar/frontendproject/FrontendProject/clothes/jacket.png'></img>";
+        return image
     }
     else if (temp <= 40 && temp > 30 ){
-        return "overcoat"
+        image = "<img src='/Users/wesleykolar/frontendproject/FrontendProject/clothes/coat.png'></img>";
+        return image
     }
     else if (temp <= 30){
-        return  "jacket + overcoat + gloves"
-    }
-}
+        image ="<img src= '/Users/wesleykolar/frontendproject/FrontendProject/clothes/coat.png'></img>";
+        return image
+    }}
 
 
 // WEATHER BY LAT/LONG
