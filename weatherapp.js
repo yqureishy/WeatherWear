@@ -6,6 +6,7 @@ const latLongUL = document.getElementById("latLongUL")
 searchButton.addEventListener('click', function(){
 
     let city = cityNameTextBox.value
+    cityNameTextBox.value = ""
 
     fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${city}&key=dff6a3d2b47f4c738ef66cad6c012603&hours=48&units=I`)
     .then((response)=>{
@@ -16,20 +17,34 @@ searchButton.addEventListener('click', function(){
             for (let index = 0; index <=47; index++) {
             
             let allWeather = ((result.data[index]))
+            // console.log(allWeather)
+            // console.log(allWeather.app_temp)
+
 
             let displayTemp = ` 
-                            <li>
-                            Temp: ${allWeather.app_temp} --- Time: ${allWeather.timestamp_local} ---Clothing Apparel: ${clothingApparel(allWeather.app_temp)}
+                            <div class="weatherInfo">
+                            <div>Time: ${allWeather.timestamp_local} |
+                            Feels Like Temp: ${allWeather.app_temp}<span>&#176;</span></div>
+                            <div class="clothesDisplay">What to Wear: ${clothingApparel(allWeather.app_temp)}</div>
                             <br>
                             <br>
-                            </li>`
+                            </div>`
 
             weatherUL.insertAdjacentHTML('beforeend', displayTemp)
     
         }
     })
-    
+
 })
+    
+const successfulLookup = function(position){
+
+    const {latitude,longitude} = position.coords;
+    console.log(latitude)
+    console.log(longitude)
+
+    
+}
 
 
 function clothingApparel(temp) {
@@ -83,5 +98,8 @@ function clothingApparel(temp) {
 //     })
 // }
 
+
 // // console.log((navigator.geolocation.getCurrentPosition(successfulLookup,console.log)))
 
+
+// console.log((navigator.geolocation.getCurrentPosition(successfulLookup,console.log)))
