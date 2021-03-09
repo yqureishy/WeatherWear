@@ -1,7 +1,7 @@
 const cityNameTextBox = document.getElementById("cityNameTextBox")
 const searchButton = document.getElementById("searchButton")
 const weatherUL = document.getElementById("weatherUL")
-const latLongUL = document.getElementById("latLongUL")
+// const latLongUL = document.getElementById("latLongUL")
 const stateNameTextBox = document.getElementById("stateNameTextBox")
 
 searchButton.addEventListener('click', function(){
