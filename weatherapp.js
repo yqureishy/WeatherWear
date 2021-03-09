@@ -41,7 +41,7 @@ const successfulLookup = function(position){
     console.log(longitude)
 
     
-})
+}
 
 
 function clothingApparel(temp) {
