@@ -49,31 +49,31 @@ const successfulLookup = function(position){
 
 function clothingApparel(temp) {
     if (temp > 80){
-        image = "<img src='/Users/wesleykolar/frontendproject/FrontendProject/clothes/tank-top.png'></img>";
+        image = "<img src='https://www.flaticon.com/svg/vstatic/svg/1867/1867631.svg?token=exp=1615327084~hmac=34a8f6a8d6e0ebf4fe00a9140366195c'></img>";
         return image
     }
     else if (temp <= 80 && temp > 70 ){
-        image = "<img src='/Users/wesleykolar/frontendproject/FrontendProject/clothes/tshirt.png'></img>";
+        image = "<img src='https://www.flaticon.com/svg/vstatic/svg/1867/1867631.svg?token=exp=1615327084~hmac=34a8f6a8d6e0ebf4fe00a9140366195c'></img>";
         return image
     }
     else if (temp <= 70 && temp > 60 ){
-        image = "<img src='/Users/wesleykolar/frontendproject/FrontendProject/clothes/long-sleeve.png'></img>";
+        image = "<img src='https://www.flaticon.com/svg/vstatic/svg/1720/1720824.svg?token=exp=1615327047~hmac=08e74c6dec43ffb468c49df73bc14d67'></img>";
         return image
     }
     else if (temp <= 60 && temp > 50 ){
-        image= "<img src= '/Users/wesleykolar/frontendproject/FrontendProject/clothes/hoodie.png'></img>";
+        image= "<img src= 'https://www.flaticon.com/svg/vstatic/svg/120/120049.svg?token=exp=1615327014~hmac=3c23e15149bd2b6a93c14783b026073d'></img>";
         return image
     }
     else if (temp <= 50 && temp > 40 ){
-        image= "<img src= '/Users/wesleykolar/frontendproject/FrontendProject/clothes/jacket.png'></img>";
+        image= "<img src= 'https://www.flaticon.com/svg/vstatic/svg/3672/3672094.svg?token=exp=1615326612~hmac=bb3d400de5f7f316916adc27fdfe67af'></img>";
         return image
     }
     else if (temp <= 40 && temp > 30 ){
-        image = "<img src='/Users/wesleykolar/frontendproject/FrontendProject/clothes/coat.png'></img>";
+        image = "<img src='https://www.flaticon.com/svg/vstatic/svg/3672/3672094.svg?token=exp=1615326612~hmac=bb3d400de5f7f316916adc27fdfe67af'></img>";
         return image
     }
     else if (temp <= 30){
-        image ="<img src= '/Users/wesleykolar/frontendproject/FrontendProject/clothes/coat.png'></img>";
+        image ="<img src= 'https://www.flaticon.com/svg/vstatic/svg/3672/3672094.svg?token=exp=1615326612~hmac=bb3d400de5f7f316916adc27fdfe67af'></img>";
         return image
     }}
 
