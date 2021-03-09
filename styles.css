@@ -1,6 +1,11 @@
-body {
+  body {
     display: flex;
-}
+    flex-direction: column;
+  }
+
+  .searchMenu {
+    width: 100px;
+  }
   
   @media (min-width: 320px) and (max-width: 480px) {
     body {
