@@ -17,13 +17,13 @@ searchButton.addEventListener('click', function(){
             for (let index = 0; index <=47; index++) {
             
             let allWeather = ((result.data[index]))
-            // console.log(allWeather)
+            console.log(allWeather)
             // console.log(allWeather.app_temp)
 
 
             let displayTemp = ` 
                             <div class="weatherInfo">
-                            <div>Time: ${allWeather.timestamp_local} |
+                            <div>Time: ${new Date(Date.parse(allWeather.timestamp_local)).toLocaleString()} |
                             Feels Like Temp: ${allWeather.app_temp}<span>&#176;</span></div>
                             <div class="clothesDisplay"> ${clothingApparel(allWeather.app_temp)}</div>
                             <br>
