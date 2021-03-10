@@ -1,14 +1,19 @@
 const cityNameTextBox = document.getElementById("cityNameTextBox")
 const searchButton = document.getElementById("searchButton")
 const weatherUL = document.getElementById("weatherUL")
-const latLongUL = document.getElementById("latLongUL")
+// const latLongUL = document.getElementById("latLongUL")
+const stateNameTextBox = document.getElementById("stateNameTextBox")
 
 searchButton.addEventListener('click', function(){
 
-    let city = cityNameTextBox.value
-    cityNameTextBox.value = ""
+    weatherUL.innerHTML = ""
 
-    fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${city}&key=dff6a3d2b47f4c738ef66cad6c012603&hours=48&units=I`)
+    let city = cityNameTextBox.value
+    let state = stateNameTextBox.value
+    cityNameTextBox.value = ""
+    stateNameTextBox.value = ""
+
+    fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${city},${state}&key=dff6a3d2b47f4c738ef66cad6c012603&hours=48&units=I`)
     .then((response)=>{
         return (response.json())
     }).then((result)=>{
@@ -17,64 +22,61 @@ searchButton.addEventListener('click', function(){
             for (let index = 0; index <=47; index++) {
             
             let allWeather = ((result.data[index]))
-            // console.log(allWeather)
+            console.log(allWeather)
             // console.log(allWeather.app_temp)
 
 
             let displayTemp = ` 
                             <div class="weatherInfo">
-                            <div>Time: ${allWeather.timestamp_local} |
+                            <div>Time: ${new Date(Date.parse(allWeather.timestamp_local)).toLocaleString()} |
                             Feels Like Temp: ${allWeather.app_temp}<span>&#176;</span></div>
-                            <div class="clothesDisplay"> ${clothingApparel(allWeather.app_temp)}</div>
+                            <div><img id="clothesDisplay"> ${clothingApparel(allWeather.app_temp)}</img></div>
                             <br>
                             <br>
                             </div>`
 
-            weatherUL.insertAdjacentHTML('beforeend', displayTemp)
-    
+            weatherUL.insertAdjacentHTML('beforeend', displayTemp)    
         }
     })
 
 })
-    
-const successfulLookup = function(position){
-
-    const {latitude,longitude} = position.coords;
-    console.log(latitude)
-    console.log(longitude)
-
-    
-}
-
 
 function clothingApparel(temp) {
     if (temp > 80){
-        image = "<img src='/Users/wesleykolar/frontendproject/FrontendProject/clothes/tank-top.png'></img>";
-        return image
+        tank = "<img src='https://www.flaticon.com/svg/vstatic/svg/4037/4037249.svg?token=exp=1615339441~hmac=eb95846b3bc73be5a954f529a42a3492' width= 64 height= 64></img>";
+        return tank
     }
     else if (temp <= 80 && temp > 70 ){
-        image = "<img src='/Users/wesleykolar/frontendproject/FrontendProject/clothes/tshirt.png'></img>";
-        return image
+        tshirt = "<img src='https://www.flaticon.com/svg/vstatic/svg/1867/1867631.svg?token=exp=1615327084~hmac=34a8f6a8d6e0ebf4fe00a9140366195c'width= 64 height= 64></img>";
+        return tshirt
     }
     else if (temp <= 70 && temp > 60 ){
-        image = "<img src='/Users/wesleykolar/frontendproject/FrontendProject/clothes/long-sleeve.png'></img>";
-        return image
+        longSleeveShirt = "<img src='https://www.flaticon.com/svg/vstatic/svg/1720/1720824.svg?token=exp=1615327047~hmac=08e74c6dec43ffb468c49df73bc14d67'width= 64 height= 64></img>";
+        tshirt = "<img src='https://www.flaticon.com/svg/vstatic/svg/1867/1867631.svg?token=exp=1615327084~hmac=34a8f6a8d6e0ebf4fe00a9140366195c'width= 64 height= 64></img>";
+        return tshirt + longSleeveShirt
     }
     else if (temp <= 60 && temp > 50 ){
-        image= "<img src= '/Users/wesleykolar/frontendproject/FrontendProject/clothes/hoodie.png'></img>";
-        return image
+        longSleeveShirt="<img src= 'https://www.flaticon.com/svg/vstatic/svg/1720/1720824.svg?token=exp=1615338896~hmac=ba747354533d5d385a5db4e1ac16c21b' width= 64 height= 64></img>";
+        hoody="<img src= 'https://www.flaticon.com/svg/vstatic/svg/120/120049.svg?token=exp=1615327014~hmac=3c23e15149bd2b6a93c14783b026073d'wid th= 64 height= 64></img>";
+        return longSleeveShirt + hoody
     }
     else if (temp <= 50 && temp > 40 ){
-        image= "<img src= '/Users/wesleykolar/frontendproject/FrontendProject/clothes/jacket.png'></img>";
-        return image
+        longSleeveShirt="<img src= 'https://www.flaticon.com/svg/vstatic/svg/1720/1720824.svg?token=exp=1615338896~hmac=ba747354533d5d385a5db4e1ac16c21b' width= 64 height= 64></img>";
+        hoody="<img src= 'https://www.flaticon.com/svg/vstatic/svg/120/120049.svg?token=exp=1615327014~hmac=3c23e15149bd2b6a93c14783b026073d'wid th= 64 height= 64></img>";
+        jacket="<img src= 'https://www.flaticon.com/svg/vstatic/svg/3126/3126039.svg?token=exp=1615337570~hmac=73c1d8f2a074013541fb4a8c501b971d'width= 64 height= 64></img>";
+        return longSleeveShirt + hoody + jacket
     }
     else if (temp <= 40 && temp > 30 ){
-        image = "<img src='/Users/wesleykolar/frontendproject/FrontendProject/clothes/coat.png'></img>";
-        return image
+        coat = "<img src='https://www.flaticon.com/svg/vstatic/svg/3672/3672094.svg?token=exp=1615326612~hmac=bb3d400de5f7f316916adc27fdfe67af'width= 64 height= 64></img>";
+        jacket = "<img src= 'https://www.flaticon.com/svg/vstatic/svg/3126/3126039.svg?token=exp=1615337570~hmac=73c1d8f2a074013541fb4a8c501b971d'width= 64 height= 64></img>";
+
+        return jacket + coat
     }
     else if (temp <= 30){
-        image ="<img src= '/Users/wesleykolar/frontendproject/FrontendProject/clothes/coat.png'></img>";
-        return image
+        coat = "<img src= 'https://www.flaticon.com/svg/vstatic/svg/3672/3672094.svg?token=exp=1615326612~hmac=bb3d400de5f7f316916adc27fdfe67af'width= 64 height= 64></img>";
+        hat = "<img src= 'https://www.flaticon.com/svg/vstatic/svg/615/615844.svg?token=exp=1615336532~hmac=33da81dc8f607dffc0b6d3ed576b75f8'width= 64 height= 64></img> ";
+        scarf = "<img src= 'https://www.flaticon.com/svg/vstatic/svg/1387/1387006.svg?token=exp=1615337246~hmac=0673521781f0cacd29e08c41cd5fbd49'width= 64 height= 64></img>";
+        return coat + hat + scarf
     }}
 
 
