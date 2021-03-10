@@ -40,7 +40,7 @@ searchButton.addEventListener('click', function(){
             weatherUL.insertAdjacentHTML('beforeend', displayTemp) 
             
         }
-        dateToday.insertAdjacentHTML('beforeend', `<p style="font-size: 15px">${new Date(Date.parse(result.data[0].timestamp_local)).toDateString("MMM dd")}</p>`)
+        dateToday.innerHTML = `<h4> Today's Forecast: </h4><p style="font-size: 15px">${new Date(Date.parse(result.data[0].timestamp_local)).toDateString("MMM dd")}</p>`
     })
 
 })
