@@ -62,7 +62,7 @@ function clothingApparel(temp) {
     }
     else if (temp <= 50 && temp > 40 ){
         longSleeveShirt="<img src= 'clothes/long-sleeve.png' width= 64 height= 64></img>";
-        hoody="<img src= 'clothes/hoodie.png'wid th= 64 height= 64></img>";
+        hoody="<img src= 'clothes/hoodie.png'width= 64 height= 64></img>";
         jacket="<img src= 'clothes/jacket.png'width= 64 height= 64></img>";
         return longSleeveShirt + hoody + jacket
     }
