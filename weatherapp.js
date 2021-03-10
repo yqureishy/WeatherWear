@@ -70,7 +70,7 @@ searchButton.addEventListener('click', function(){
 
 function clothingApparel(temp) {
     if (temp > 80){
-        tank = "<img src='clothes/008-tank-top.png' width= 64 height= 64></img>";
+        tank = "<img src='clothes/008-tank-top.png'></img>";
         return tank
     }
     else if (temp <= 80 && temp > 69.9 ){
@@ -104,7 +104,8 @@ function clothingApparel(temp) {
         hat = "<img src= 'clothes/001-winter-hat.png'width= 64 height= 64></img> ";
         scarf = "<img src= 'clothes/002-scarf.png'width= 64 height= 64></img>";
         return `${coat} + ${hat} + ${scarf}`
-    }}
+
+  }}
 
 
 
