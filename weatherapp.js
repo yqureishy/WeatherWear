@@ -1,13 +1,17 @@
-const cityNameTextBox = document.getElementById("cityNameTextBox")
-const searchButton = document.getElementById("searchButton")
-const weatherUL = document.getElementById("weatherUL")
+const cityNameTextBox = document.getElementById("cityNameTextBox");
+const searchButton = document.getElementById("searchButton");
+const todaysWeatherUL = document.getElementById("todaysWeatherUL");
+const tomorrowsWeatherUL = document.getElementById("tomorrowsWeatherUL");
 // const latLongUL = document.getElementById("latLongUL")
 const stateNameTextBox = document.getElementById("stateNameTextBox")
-const dateToday = document.getElementById("dateToday")
+const dateTodayHeader = document.getElementById("dateTodayHeader")
+
+
 
 searchButton.addEventListener('click', function(){
 
-    weatherUL.innerHTML = ""
+    todaysWeatherUL.innerHTML = ""
+    tomorrowsWeatherUL.innerHTML = ""
 
     let city = cityNameTextBox.value
     let state = stateNameTextBox.value
@@ -24,8 +28,6 @@ searchButton.addEventListener('click', function(){
             
             let allWeather = ((result.data[index]))
             console.log(allWeather)
-            // console.log(allWeather.app_temp)
-
 
             let displayTemp = ` 
                             <div class="weatherInfo">
@@ -37,16 +39,29 @@ searchButton.addEventListener('click', function(){
                             <br>
                             </div>`
 
-            weatherUL.insertAdjacentHTML('beforeend', displayTemp) 
-            
+            // todaysWeatherUL.insertAdjacentHTML('beforeend', displayTemp) 
+
+            let apiTime = new Date(Date.parse(result.data[index].timestamp_local)).toLocaleDateString()
+            // let apiTime = allWeather.timestamp_local
+            console.log(apiTime) //api object
+
+            let today = new Date();
+            let date = today.getMonth()+1 +'/'+ today.getDate() +'/'+ today.getFullYear()
+            console.log(date) //object I created
+
+            if (date === apiTime) {
+                console.log("Today's Forecast")
+                todaysWeatherUL.insertAdjacentHTML('beforeend', displayTemp)
+            }
+            else {
+                console.log("Tomorrow's Forecast")
+                tomorrowsWeatherUL.insertAdjacentHTML('beforeend', displayTemp)
+            }
         }
-        dateToday.innerHTML = `<h4> Today's Forecast: </h4><p style="font-size: 15px">${new Date(Date.parse(result.data[0].timestamp_local)).toDateString().split(' ').slice(0,3).join(' ')}</p>`
-
-        console.log(`${new Date(Date.parse(result.data[0].timestamp_local)).toLocaleDateString('default', { month: 'long' })}`)
-
+            
+        })
+        dateTodayHeader.innerHTML = `<h4> Today's Forecast: </h4><p style="font-size: 15px">${new Date(Date.parse(result.data[0].timestamp_local)).toDateString().split(' ').slice(0,3).join(' ')}</p>`
     })
-
-})
 
 function clothingApparel(temp) {
     if (temp > 80){
@@ -89,8 +104,6 @@ function clothingApparel(temp) {
 
 // WEATHER BY LAT/LONG
 
-
-
 // const successfulLookup = function(position){
 
 //     const {latitude,longitude} = position.coords;
@@ -101,7 +114,7 @@ function clothingApparel(temp) {
 //     })
 //     .then(function(result){
 
-//             let displayTemp = ` 
+//             let displayTemp = `
 //                             <li>
 //                             Temp: ${result.data[0].app_temp} --- Time: ${result.data[0].timestamp_local}
 //                             <br>
@@ -113,8 +126,6 @@ function clothingApparel(temp) {
 //     })
 // }
 
-
 // // console.log((navigator.geolocation.getCurrentPosition(successfulLookup,console.log)))
-
 
 // console.log((navigator.geolocation.getCurrentPosition(successfulLookup,console.log)))
