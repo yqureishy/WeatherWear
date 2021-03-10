@@ -3,106 +3,106 @@ const searchButton = document.getElementById("searchButton");
 const todaysWeatherUL = document.getElementById("todaysWeatherUL");
 const tomorrowsWeatherUL = document.getElementById("tomorrowsWeatherUL");
 // const latLongUL = document.getElementById("latLongUL")
-const stateNameTextBox = document.getElementById("stateNameTextBox");
+const stateNameTextBox = document.getElementById("stateNameTextBox")
+const dateTodayHeader = document.getElementById("dateTodayHeader")
 
-searchButton.addEventListener("click", function () {
-  todaysWeatherUL.innerHTML = "";
-  tomorrowsWeatherUL.innerHTML = "";
+searchButton.addEventListener('click', function(){
 
-  let city = cityNameTextBox.value;
-  let state = stateNameTextBox.value;
-  cityNameTextBox.value = "";
-  stateNameTextBox.value = "";
+    todaysWeatherUL.innerHTML = ""
+    tomorrowsWeatherUL.innerHTML = ""
 
-  fetch(
-    `https://api.weatherbit.io/v2.0/forecast/hourly?city=${city},${state}&key=dff6a3d2b47f4c738ef66cad6c012603&hours=48&units=I`
-  )
-    .then((response) => {
-      return response.json();
-    })
-    .then((result) => {
-      console.log(result.data);
+    let city = cityNameTextBox.value
+    let state = stateNameTextBox.value
+    cityNameTextBox.value = ""
+    stateNameTextBox.value = ""
 
-      for (let index = 0; index <= 47; index++) {
-        let allWeather = result.data[index];
-        console.log(allWeather);
-        console.log(allWeather.timestamp_local);
-        let today = new Date();
-        let date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-        console.log(date);
+    fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${city},${state}&key=dff6a3d2b47f4c738ef66cad6c012603&hours=48&units=I`)
+    .then((response)=>{
+        return (response.json())
+    }).then((result)=>{
+            console.log(result.data)
+                
+            for (let index = 0; index <=47; index++) {
+            
+            let allWeather = ((result.data[index]))
+            console.log(allWeather)
 
-        let displayTemp = ` 
+            let displayTemp = ` 
                             <div class="weatherInfo">
-                            <div>Time: ${new Date(
-                              Date.parse(allWeather.timestamp_local)
-                            ).toLocaleString()} |
-                            Feels Like Temp: ${
-                              allWeather.app_temp
-                            }<span>&#176;</span></div>
-                            <div><img id="clothesDisplay"> ${clothingApparel(
-                              allWeather.app_temp
-                            )}</img></div>
-                            <br>
-                            <br>
-                            </div>`;
 
-        if (allWeather.timestamp_local) {
-          console.log("today's forecast");
-          todaysWeatherUL.insertAdjacentHTML("beforeend", displayTemp);
-        } else {
-          console.log("tomorrow's forecast");
-          tomorrowsWeatherUL.insertAdjacentHTML("beforeend", displayTemp);
+                            <div>Time: ${new Date(Date.parse(allWeather.timestamp_local)).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})} |
+                            Feels Like Temp: ${allWeather.app_temp}<span>&#176;</span></div>
+                            <div><img id="clothesDisplay"> ${clothingApparel(allWeather.app_temp)}</img></div>
+                            <br>
+                            <br>
+                            </div>`
+
+            // todaysWeatherUL.insertAdjacentHTML('beforeend', displayTemp) 
+
+            let apiTime = new Date(Date.parse(result.data[index].timestamp_local)).toLocaleDateString()
+            // let apiTime = allWeather.timestamp_local
+            console.log(apiTime) //api object
+
+            let today = new Date();
+            let date = today.getMonth()+1 +'/'+ today.getDate() +'/'+ today.getFullYear()
+            console.log(date) //object I created
+
+            if (date === apiTime) {
+                console.log("Today's Forecast")
+                todaysWeatherUL.insertAdjacentHTML('beforeend', displayTemp)
+            }
+            else {
+                console.log("Tomorrow's Forecast")
+                tomorrowsWeatherUL.insertAdjacentHTML('beforeend', displayTemp)
+            }
+
+            // todaysDate = new Date(Date.parse(result.data[0].timestamp_local)).toDateString()
+            // console.log(todaysDate) //this prints Wed Mar 10 2021
         }
-      }
-    });
-});
+
+        dateTodayHeader.innerHTML = `<h4> Today's Forecast: </h4><p style="font-size: 15px">${new Date(Date.parse(result.data[0].timestamp_local)).toDateString()}</p>`
+    })
+
+})
 
 function clothingApparel(temp) {
-  if (temp > 80) {
-    tank =
-      "<img src='https://www.flaticon.com/svg/vstatic/svg/4037/4037249.svg?token=exp=1615339441~hmac=eb95846b3bc73be5a954f529a42a3492' width= 64 height= 64></img>";
-    return tank;
-  } else if (temp <= 80 && temp > 70) {
-    tshirt =
-      "<img src='https://www.flaticon.com/svg/vstatic/svg/1867/1867631.svg?token=exp=1615327084~hmac=34a8f6a8d6e0ebf4fe00a9140366195c'width= 64 height= 64></img>";
-    return tshirt;
-  } else if (temp <= 70 && temp > 60) {
-    longSleeveShirt =
-      "<img src='https://www.flaticon.com/svg/vstatic/svg/1720/1720824.svg?token=exp=1615327047~hmac=08e74c6dec43ffb468c49df73bc14d67'width= 64 height= 64></img>";
-    tshirt =
-      "<img src='https://www.flaticon.com/svg/vstatic/svg/1867/1867631.svg?token=exp=1615327084~hmac=34a8f6a8d6e0ebf4fe00a9140366195c'width= 64 height= 64></img>";
-    return tshirt + longSleeveShirt;
-  } else if (temp <= 60 && temp > 50) {
-    longSleeveShirt =
-      "<img src= 'https://www.flaticon.com/svg/vstatic/svg/1720/1720824.svg?token=exp=1615338896~hmac=ba747354533d5d385a5db4e1ac16c21b' width= 64 height= 64></img>";
-    hoody =
-      "<img src= 'https://www.flaticon.com/svg/vstatic/svg/120/120049.svg?token=exp=1615327014~hmac=3c23e15149bd2b6a93c14783b026073d'wid th= 64 height= 64></img>";
-    return longSleeveShirt + hoody;
-  } else if (temp <= 50 && temp > 40) {
-    longSleeveShirt =
-      "<img src= 'https://www.flaticon.com/svg/vstatic/svg/1720/1720824.svg?token=exp=1615338896~hmac=ba747354533d5d385a5db4e1ac16c21b' width= 64 height= 64></img>";
-    hoody =
-      "<img src= 'https://www.flaticon.com/svg/vstatic/svg/120/120049.svg?token=exp=1615327014~hmac=3c23e15149bd2b6a93c14783b026073d'wid th= 64 height= 64></img>";
-    jacket =
-      "<img src= 'https://www.flaticon.com/svg/vstatic/svg/3126/3126039.svg?token=exp=1615337570~hmac=73c1d8f2a074013541fb4a8c501b971d'width= 64 height= 64></img>";
-    return longSleeveShirt + hoody + jacket;
-  } else if (temp <= 40 && temp > 30) {
-    coat =
-      "<img src='https://www.flaticon.com/svg/vstatic/svg/3672/3672094.svg?token=exp=1615326612~hmac=bb3d400de5f7f316916adc27fdfe67af'width= 64 height= 64></img>";
-    jacket =
-      "<img src= 'https://www.flaticon.com/svg/vstatic/svg/3126/3126039.svg?token=exp=1615337570~hmac=73c1d8f2a074013541fb4a8c501b971d'width= 64 height= 64></img>";
+    if (temp > 80){
+        tank = "<img src='clothes/tank-top.png' width= 64 height= 64></img>";
+        return tank
+    }
+    else if (temp <= 80 && temp > 70 ){
+        tshirt = "<img src='clothes/tshirt.png'width= 64 height= 64></img>";
+        return tshirt
+    }
+    else if (temp <= 70 && temp > 60 ){
+        longSleeveShirt = "<img src='clothes/long-sleeve.png'width= 64 height= 64></img>";
+        tshirt = "<img src='clothes/tshirt.png'width= 64 height= 64></img>";
+        return tshirt + longSleeveShirt
+    }
+    else if (temp <= 60 && temp > 50 ){
+        longSleeveShirt="<img src= 'clothes/long-sleeve.png' width= 64 height= 64></img>";
+        hoody="<img src= 'clothes/hoodie.png' width= 64 height= 64></img>";
+        return longSleeveShirt + hoody
+    }
+    else if (temp <= 50 && temp > 40 ){
+        longSleeveShirt="<img src= 'clothes/long-sleeve.png' width= 64 height= 64></img>";
+        hoody="<img src= 'clothes/hoodie.png'width= 64 height= 64></img>";
+        jacket="<img src= 'clothes/jacket.png'width= 64 height= 64></img>";
+        return longSleeveShirt + hoody + jacket
+    }
+    else if (temp <= 40 && temp > 30 ){
+        coat = "<img src='clothes/coat.png'width= 64 height= 64></img>";
+        jacket = "<img src= 'clothes/jacket.png'width= 64 height= 64></img>";
 
-    return jacket + coat;
-  } else if (temp <= 30) {
-    coat =
-      "<img src= 'https://www.flaticon.com/svg/vstatic/svg/3672/3672094.svg?token=exp=1615326612~hmac=bb3d400de5f7f316916adc27fdfe67af'width= 64 height= 64></img>";
-    hat =
-      "<img src= 'https://www.flaticon.com/svg/vstatic/svg/615/615844.svg?token=exp=1615336532~hmac=33da81dc8f607dffc0b6d3ed576b75f8'width= 64 height= 64></img> ";
-    scarf =
-      "<img src= 'https://www.flaticon.com/svg/vstatic/svg/1387/1387006.svg?token=exp=1615337246~hmac=0673521781f0cacd29e08c41cd5fbd49'width= 64 height= 64></img>";
-    return coat + hat + scarf;
-  }
-}
+        return jacket + coat
+    }
+    else if (temp <= 30){
+        coat = "<img src= 'clothes/coat.png'width= 64 height= 64></img>";
+        hat = "<img src= 'clothes/002-winter-hat.png'width= 64 height= 64></img> ";
+        scarf = "<img src= 'clothes/001-scarf.png'width= 64 height= 64></img>";
+        return coat + hat + scarf
+    }}
+
 
 // WEATHER BY LAT/LONG
 
