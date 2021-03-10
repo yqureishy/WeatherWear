@@ -22,12 +22,12 @@ searchButton.addEventListener('click', function(){
     .then((response)=>{
         return (response.json())
     }).then((result)=>{
-            console.log(result.data)
+            // console.log(result.data)
                 
             for (let index = 0; index <=47; index++) {
             
             let allWeather = ((result.data[index]))
-            console.log(allWeather)
+            // console.log(allWeather)
 
             let displayTemp = ` 
                             <div class="weatherInfo">
@@ -42,25 +42,41 @@ searchButton.addEventListener('click', function(){
             // todaysWeatherUL.insertAdjacentHTML('beforeend', displayTemp) 
 
             let apiTime = new Date(Date.parse(result.data[index].timestamp_local)).toLocaleDateString()
-            // let apiTime = allWeather.timestamp_local
-            console.log(apiTime) //api object
+            console.log(apiTime)
 
-            let today = new Date();
-            let date = today.getMonth()+1 +'/'+ today.getDate() +'/'+ today.getFullYear()
-            console.log(date) //object I created
+            // let today = new Date();
+            // let date = today.getMonth()+1 +'/'+ today.getDate() +'/'+ today.getFullYear()
+            // console.log(date)
 
-            if (date === apiTime) {
-                console.log("Today's Forecast")
+            const today = new Date()
+            console.log("today =>", today)
+            
+            let tomorrow = new Date()
+            tomorrow.setDate(today.getDate() + 1)
+            console.log("tomorrow =>", tomorrow)
+
+
+            // let tomorrow = new Date()
+            // let tomorrowsDate = tomorrow.getMonth()+1 +'/'+ (tomorrow.getDate()+1 - 100) +'/'+ tomorrow.getFullYear()
+            // console.log(tomorrowsDate)
+           
+
+            // let tomorrowsDate = tomorrow.getMonth()+1 +'/'+ tomorrow.getDate()+1 +'/'+ tomorrow.getFullYear()
+            // console.log(tomorrowsDate)
+
+            if (today === apiTime) {
+                // console.log("Today's Forecast")
                 todaysWeatherUL.insertAdjacentHTML('beforeend', displayTemp)
             }
             else {
-                console.log("Tomorrow's Forecast")
+                // console.log("Tomorrow's Forecast")
                 tomorrowsWeatherUL.insertAdjacentHTML('beforeend', displayTemp)
             }
+            dateTodayHeader.innerHTML = `<h4> Today's Forecast: </h4><p style="font-size: 15px">${new Date(Date.parse(result.data[0].timestamp_local)).toDateString().split(' ').slice(0,3).join(' ')}</p>`
         }
             
         })
-        dateTodayHeader.innerHTML = `<h4> Today's Forecast: </h4><p style="font-size: 15px">${new Date(Date.parse(result.data[0].timestamp_local)).toDateString().split(' ').slice(0,3).join(' ')}</p>`
+
     })
 
 function clothingApparel(temp) {
