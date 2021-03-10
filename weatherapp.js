@@ -100,7 +100,7 @@ function clothingApparel(temp) {
         scarf = "<img src= 'clothes/002-scarf.png'</img>";
         mittins = "<img src= 'clothes/009-gloves.png '</img>";
 
-        return `${coat} + ${hat} + ${scarf} + ${mittins}`
+        return `${coat} + ${hat} + ${scarf} +  ${mittins}`
     }}
 
 
