@@ -43,39 +43,39 @@ searchButton.addEventListener('click', function(){
 
 function clothingApparel(temp) {
     if (temp > 80){
-        tank = "<img src='https://www.flaticon.com/svg/vstatic/svg/4037/4037249.svg?token=exp=1615339441~hmac=eb95846b3bc73be5a954f529a42a3492' width= 64 height= 64></img>";
+        tank = "<img src='clothes/tank-top.png' width= 64 height= 64></img>";
         return tank
     }
     else if (temp <= 80 && temp > 70 ){
-        tshirt = "<img src='https://www.flaticon.com/svg/vstatic/svg/1867/1867631.svg?token=exp=1615327084~hmac=34a8f6a8d6e0ebf4fe00a9140366195c'width= 64 height= 64></img>";
+        tshirt = "<img src='clothes/tshirt.png'width= 64 height= 64></img>";
         return tshirt
     }
     else if (temp <= 70 && temp > 60 ){
-        longSleeveShirt = "<img src='https://www.flaticon.com/svg/vstatic/svg/1720/1720824.svg?token=exp=1615327047~hmac=08e74c6dec43ffb468c49df73bc14d67'width= 64 height= 64></img>";
-        tshirt = "<img src='https://www.flaticon.com/svg/vstatic/svg/1867/1867631.svg?token=exp=1615327084~hmac=34a8f6a8d6e0ebf4fe00a9140366195c'width= 64 height= 64></img>";
+        longSleeveShirt = "<img src='clothes/long-sleeve.png'width= 64 height= 64></img>";
+        tshirt = "<img src='clothes/tshirt.png'width= 64 height= 64></img>";
         return tshirt + longSleeveShirt
     }
     else if (temp <= 60 && temp > 50 ){
-        longSleeveShirt="<img src= 'https://www.flaticon.com/svg/vstatic/svg/1720/1720824.svg?token=exp=1615338896~hmac=ba747354533d5d385a5db4e1ac16c21b' width= 64 height= 64></img>";
-        hoody="<img src= 'https://www.flaticon.com/svg/vstatic/svg/120/120049.svg?token=exp=1615327014~hmac=3c23e15149bd2b6a93c14783b026073d'wid th= 64 height= 64></img>";
+        longSleeveShirt="<img src= 'clothes/long-sleeve.png' width= 64 height= 64></img>";
+        hoody="<img src= 'clothes/hoodie.png' width= 64 height= 64></img>";
         return longSleeveShirt + hoody
     }
     else if (temp <= 50 && temp > 40 ){
-        longSleeveShirt="<img src= 'https://www.flaticon.com/svg/vstatic/svg/1720/1720824.svg?token=exp=1615338896~hmac=ba747354533d5d385a5db4e1ac16c21b' width= 64 height= 64></img>";
-        hoody="<img src= 'https://www.flaticon.com/svg/vstatic/svg/120/120049.svg?token=exp=1615327014~hmac=3c23e15149bd2b6a93c14783b026073d'wid th= 64 height= 64></img>";
-        jacket="<img src= 'https://www.flaticon.com/svg/vstatic/svg/3126/3126039.svg?token=exp=1615337570~hmac=73c1d8f2a074013541fb4a8c501b971d'width= 64 height= 64></img>";
+        longSleeveShirt="<img src= 'clothes/long-sleeve.png' width= 64 height= 64></img>";
+        hoody="<img src= 'clothes/hoodie.png'width= 64 height= 64></img>";
+        jacket="<img src= 'clothes/jacket.png'width= 64 height= 64></img>";
         return longSleeveShirt + hoody + jacket
     }
     else if (temp <= 40 && temp > 30 ){
-        coat = "<img src='https://www.flaticon.com/svg/vstatic/svg/3672/3672094.svg?token=exp=1615326612~hmac=bb3d400de5f7f316916adc27fdfe67af'width= 64 height= 64></img>";
-        jacket = "<img src= 'https://www.flaticon.com/svg/vstatic/svg/3126/3126039.svg?token=exp=1615337570~hmac=73c1d8f2a074013541fb4a8c501b971d'width= 64 height= 64></img>";
+        coat = "<img src='clothes/coat.png'width= 64 height= 64></img>";
+        jacket = "<img src= 'clothes/jacket.png'width= 64 height= 64></img>";
 
         return jacket + coat
     }
     else if (temp <= 30){
-        coat = "<img src= 'https://www.flaticon.com/svg/vstatic/svg/3672/3672094.svg?token=exp=1615326612~hmac=bb3d400de5f7f316916adc27fdfe67af'width= 64 height= 64></img>";
-        hat = "<img src= 'https://www.flaticon.com/svg/vstatic/svg/615/615844.svg?token=exp=1615336532~hmac=33da81dc8f607dffc0b6d3ed576b75f8'width= 64 height= 64></img> ";
-        scarf = "<img src= 'https://www.flaticon.com/svg/vstatic/svg/1387/1387006.svg?token=exp=1615337246~hmac=0673521781f0cacd29e08c41cd5fbd49'width= 64 height= 64></img>";
+        coat = "<img src= 'clothes/coat.png'width= 64 height= 64></img>";
+        hat = "<img src= 'clothes/002-winter-hat.png'width= 64 height= 64></img> ";
+        scarf = "<img src= 'clothes/001-scarf.png'width= 64 height= 64></img>";
         return coat + hat + scarf
     }}
 
