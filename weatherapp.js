@@ -3,6 +3,7 @@ const searchButton = document.getElementById("searchButton")
 const weatherUL = document.getElementById("weatherUL")
 // const latLongUL = document.getElementById("latLongUL")
 const stateNameTextBox = document.getElementById("stateNameTextBox")
+const dateToday = document.getElementById("dateToday")
 
 searchButton.addEventListener('click', function(){
 
@@ -28,15 +29,18 @@ searchButton.addEventListener('click', function(){
 
             let displayTemp = ` 
                             <div class="weatherInfo">
-                            <div>Time: ${new Date(Date.parse(allWeather.timestamp_local)).toLocaleString()} |
+
+                            <div>Time: ${new Date(Date.parse(allWeather.timestamp_local)).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})} |
                             Feels Like Temp: ${allWeather.app_temp}<span>&#176;</span></div>
                             <div><img id="clothesDisplay"> ${clothingApparel(allWeather.app_temp)}</img></div>
                             <br>
                             <br>
                             </div>`
 
-            weatherUL.insertAdjacentHTML('beforeend', displayTemp)    
+            weatherUL.insertAdjacentHTML('beforeend', displayTemp) 
+            
         }
+        dateToday.insertAdjacentHTML('beforeend', `<p style="font-size: 15px">${new Date(Date.parse(result.data[0].timestamp_local)).toDateString("MMM dd")}</p>`)
     })
 
 })
