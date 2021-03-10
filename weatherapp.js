@@ -40,7 +40,10 @@ searchButton.addEventListener('click', function(){
             weatherUL.insertAdjacentHTML('beforeend', displayTemp) 
             
         }
-        dateToday.innerHTML = `<h4> Today's Forecast: </h4><p style="font-size: 15px">${new Date(Date.parse(result.data[0].timestamp_local)).toDateString("MMM dd")}</p>`
+        dateToday.innerHTML = `<h4> Today's Forecast: </h4><p style="font-size: 15px">${new Date(Date.parse(result.data[0].timestamp_local)).toDateString().split(' ').slice(0,3).join(' ')}</p>`
+
+        console.log(`${new Date(Date.parse(result.data[0].timestamp_local)).toLocaleDateString('default', { month: 'long' })}`)
+
     })
 
 })
