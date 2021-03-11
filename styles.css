@@ -1,8 +1,8 @@
-html {
+/* html {
   background: rgb(93,144,191);
   background: linear-gradient(180deg, rgba(93,144,191,1) 0%, rgba(150,184,215,1) 29%, rgba(212,227,237,1) 52%, rgba(239,232,235,1) 75%, rgba(235,208,212,1) 85%);
   min-height: 100%;
-}
+} */
 
 body {
   margin: 0;
@@ -11,7 +11,19 @@ body {
   background-attachment: fixed;
 }
 
+/* input {
+  margin: 10px;
+} */
+
+button {
+  margin: 10px;
+  width: 100px;
+}
+
 .background {
+  background: rgb(93,144,191);
+  background: linear-gradient(180deg, rgba(93,144,191,1) 0%, rgba(150,184,215,1) 29%, rgba(212,227,237,1) 52%, rgba(239,232,235,1) 75%, rgba(235,208,212,1) 85%);
+  min-height: 100%;
   margin: 0;
   background-size: 100%;
   text-align: center;
@@ -63,4 +75,14 @@ body {
 #WEAR {
   height:90px;
   width:90px
+}
+
+@media (max-width: 500px) {
+  input {
+    width: 200px;
+  }
+
+  button {
+    width: 200px;
+  }
 }
