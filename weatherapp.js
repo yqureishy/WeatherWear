@@ -31,8 +31,8 @@ searchButton.addEventListener('click', function(){
             let displayTemp = ` 
                             <div class="weatherInfo">
 
-                            <div>${new Date(Date.parse(allWeather.timestamp_local)).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})} |
-                            Feels Like: ${parseInt(allWeather.app_temp)}<span>&#176;</span>F</div>
+                            <div>${new Date(Date.parse(allWeather.timestamp_local)).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}|
+                            Feels Like: ${parseInt(allWeather.app_temp)}<span>&#176;</span>F</div><br>
                             <div><img id="clothesDisplay"> ${clothingApparel(allWeather.app_temp)}</img></div>
                             <br>
                             <br>
@@ -125,7 +125,8 @@ function clothingApparel(temp) {
         mittins = "<img src= 'clothes/009-gloves.png 'width= 42 height= 42</img>";
         pants = "<img src='clothes/013-trousers.png'width=42 height=42 ></img>";
         boots = "<img src='clothes/012-boots.png'width=42 height=42 ></img>";
-        return ` ${coat} + ${hat} + ${scarf} +  ${mittins} + ${pants} + ${boots}`
+        return ` ${coat} + ${hat} + ${scarf}<br><br>
+               ${mittins} + ${pants} + ${boots}`
     }}
 
 
