@@ -39,25 +39,32 @@ searchButton.addEventListener('click', function(){
 
             // todaysWeatherUL.insertAdjacentHTML('beforeend', displayTemp) 
 
-            dateTodayHeader.innerHTML = `<h4> Today's Forecast </h4><p style="font-size: 15px">${new Date(Date.parse(result.data[0].timestamp_local)).toDateString().split(' ').slice(0,3).join(' ')}</p>`
+            // dateTodayHeader.innerHTML = `<h4> Today's Forecast </h4><p style="font-size: 15px">${new Date(Date.parse(result.data[0].timestamp_local)).toDateString().split(' ').slice(0,3).join(' ')}</p>`
 
-            dateTomorrowHeader.innerHTML = `<h4> Tomorrow's Forecast </h4><p style="font-size: 15px">${new Date(Date.parse(result.data[24].timestamp_local)).toDateString().split(' ').slice(0,3).join(' ')}</p>`
+            // dateTomorrowHeader.innerHTML = `<h4> Tomorrow's Forecast </h4><p style="font-size: 15px">${new Date(Date.parse(result.data[24].timestamp_local)).toDateString().split(' ').slice(0,3).join(' ')}</p>`
 
             let apiTime = new Date(Date.parse(result.data[index].timestamp_local)).toLocaleDateString()
-            // let apiTime = allWeather.timestamp_local
-            console.log("The time from api is " + apiTime) 
+            console.log("The time from the api is " + apiTime) 
 
             let today = new Date();
-            let date = today.getMonth()+1 +'/'+ today.getDate() +'/'+ today.getFullYear()
-            console.log("Today's date" + date) 
+            let todaysDate = today.getMonth()+1 +'/'+ today.getDate() +'/'+ today.getFullYear()
+            console.log("Today's date " + todaysDate)
 
-            if (date === apiTime) {
+            let tomorrow = new Date()
+            tomorrow.setDate(tomorrow.getDate() + 1)
+            let tomorrowsDate = tomorrow.getMonth()+1 +'/'+ tomorrow.getDate() +'/'+ tomorrow.getFullYear()
+            console.log("Tomorrow's date " + tomorrowsDate)
+
+            if (apiTime === todaysDate) {
                 console.log("Today's Forecast")
                 todaysWeatherUL.insertAdjacentHTML('beforeend', displayTemp)
             }
-            else {
+            else if (apiTime === tomorrowsDate) {
                 console.log("Tomorrow's Forecast")
                 tomorrowsWeatherUL.insertAdjacentHTML('beforeend', displayTemp)
+            }
+            else {
+                console.log("Weather for the day after tomorrow")
             }
         }
             
