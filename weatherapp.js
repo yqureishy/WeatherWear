@@ -7,8 +7,6 @@ const stateNameTextBox = document.getElementById("stateNameTextBox")
 const dateTodayHeader = document.getElementById("dateTodayHeader")
 const dateTomorrowHeader = document.getElementById("dateTomorrowHeader")
 
-
-
 searchButton.addEventListener('click', function(){
 
     todaysWeatherUL.innerHTML = ""
@@ -47,20 +45,27 @@ searchButton.addEventListener('click', function(){
             dateTomorrowHeader.innerHTML = `<h4> Tomorrow's Forecast </h4><p style="font-size: 15px">${new Date(Date.parse(result.data[24].timestamp_local)).toDateString().split(' ').slice(0,3).join(' ')}</p>`
 
             let apiTime = new Date(Date.parse(result.data[index].timestamp_local)).toLocaleDateString()
-            // let apiTime = allWeather.timestamp_local
-            console.log(apiTime) //api object
+            console.log("The time from the api is " + apiTime) 
 
             let today = new Date();
-            let date = today.getMonth()+1 +'/'+ today.getDate() +'/'+ today.getFullYear()
-            console.log(date) //object I created
+            let todaysDate = today.getMonth()+1 +'/'+ today.getDate() +'/'+ today.getFullYear()
+            console.log("Today's date " + todaysDate)
 
-            if (date === apiTime) {
+            let tomorrow = new Date()
+            tomorrow.setDate(tomorrow.getDate() + 1)
+            let tomorrowsDate = tomorrow.getMonth()+1 +'/'+ tomorrow.getDate() +'/'+ tomorrow.getFullYear()
+            console.log("Tomorrow's date " + tomorrowsDate)
+
+            if (apiTime === todaysDate) {
                 console.log("Today's Forecast")
                 todaysWeatherUL.insertAdjacentHTML('beforeend', displayTemp)
             }
-            else {
+            else if (apiTime === tomorrowsDate) {
                 console.log("Tomorrow's Forecast")
                 tomorrowsWeatherUL.insertAdjacentHTML('beforeend', displayTemp)
+            }
+            else {
+                console.log("Weather for the day after tomorrow")
             }
         }
             
@@ -100,7 +105,7 @@ function clothingApparel(temp) {
         return `${jacket} + ${coat}`
     }
 
-    else if (temp <= 30){
+    else if (temp <= 29.9){
         coat = "<img src= 'clothes/003-coat.png'</img>";
         hat = "<img src= 'clothes/001-winter-hat.png'</img> ";
         scarf = "<img src= 'clothes/002-scarf.png'</img>";
@@ -108,6 +113,13 @@ function clothingApparel(temp) {
 
         return `${coat} + ${hat} + ${scarf} +  ${mittins}`
     }}
+
+
+
+
+ // }}
+
+
 
 
 
