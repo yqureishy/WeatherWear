@@ -30,9 +30,8 @@ searchButton.addEventListener('click', function(){
 
             let displayTemp = ` 
                             <div class="weatherInfo">
-
                             <div><b>${new Date(Date.parse(allWeather.timestamp_local)).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</b></div>
-                            <div>Feels Like: ${parseInt(allWeather.app_temp)}<span>&#176;</span>F</div>
+                            <div>Feels Like: ${parseInt(allWeather.app_temp)}<span>&#176;</span>F</div><br>
                             <div><img id="clothesDisplay"> ${clothingApparel(allWeather.app_temp)}</img></div>
                             <br>
                             <br>
@@ -75,43 +74,58 @@ searchButton.addEventListener('click', function(){
 
 function clothingApparel(temp) {
     if (temp > 80){
-        tank = "<img src='clothes/008-tank-top.png'></img>";
-        return tank
+        tank = "<img src='clothes/008-tank-top.png'width=42 height=42 ></img>";
+        shorts ="<img src= 'clothes/011-shorts.png'width= 42 height= 42></img>";
+        flipFlops = "<img src='clothes/010-flip-flops.png'width=42 height=42 ></img>";
+        return `${tank} + ${shorts} + ${flipFlops}` 
     }
     else if (temp <= 80 && temp > 69.9 ){
-        tshirt = "<img src='clothes/007-tshirt.png'width= 64 height= 64></img>";
-        return tshirt
+        tshirt = "<img src='clothes/007-tshirt.png'width= 42 height= 42></img>";
+        shorts ="<img src= 'clothes/011-shorts.png'width= 42 height= 42></img>";
+        flipFlops = "<img src='clothes/010-flip-flops.png'width=42 height=42 ></img>";
+
+        return `${tshirt} + ${shorts} + ${flipFlops}`
     }
     else if (temp <= 70 && temp > 59.9 ){
-        longSleeveShirt ="<img src= 'clothes/006-longsleeve.png'width= 64 height= 64></img>";
-        tshirt = "<img src='clothes/007-tshirt.png'width= 64 height= 64></img>";
-        return `${tshirt} + ${longSleeveShirt}`
+        longSleeveShirt ="<img src= 'clothes/006-longsleeve.png'width=42 height= 42></img>";
+        tshirt = "<img src='clothes/007-tshirt.png'width= 42 height= 42></img>";
+        pants = "<img src='clothes/013-trousers.png'width=42 height=42 ></img>";
+        sneakers = "<img src='clothes/016-sneakers.png'width=42 height=42 ></img>";
+        return `${tshirt} + ${longSleeveShirt} + ${pants} + ${sneakers}`
     }
     else if (temp <= 60 && temp > 49.9 ){
-        longSleeveShirt="<img src= 'clothes/006-longsleeve.png' width= 64 height= 64></img>";
-        hoody="<img src= 'clothes/005-hoodie.png' width= 64 height= 64></img>";
-        return `${longSleeveShirt} + ${hoody}`
+        longSleeveShirt="<img src= 'clothes/006-longsleeve.png' width= 42 height= 42></img>";
+        hoody="<img src= 'clothes/005-hoodie.png' width= 42 height= 42></img>";
+        pants = "<img src='clothes/013-trousers.png'width=42 height=42 ></img>";
+        sneakers = "<img src='clothes/016-sneakers.png'width=42 height=42 ></img>";
+        return `${longSleeveShirt} + ${hoody} + ${pants} + ${sneakers}`
     }
     else if (temp <= 50 && temp > 39.9 ){
-        longSleeveShirt="<img src= 'clothes/006-longsleeve.png' width= 64 height= 64></img>";
-        hoody="<img src= 'clothes/005-hoodie.png'width= 64 height= 64></img>";
-        jacket="<img src= 'clothes/004-jacket-1.png'width= 64 height= 64></img>";
-        return `${longSleeveShirt} + ${hoody} + ${jacket}`
+        longSleeveShirt="<img src= 'clothes/006-longsleeve.png' width= 42 height= 42></img>";
+        hoody="<img src= 'clothes/005-hoodie.png'width= 42 height= 42></img>";
+        jacket="<img src= 'clothes/004-jacket-1.png'width= 42 height= 42></img>";
+        pants = "<img src='clothes/013-trousers.png'width=42 height=42 ></img>";
+        boots = "<img src='clothes/012-boots.png'width=42 height=42 ></img>";
+        return `${longSleeveShirt} + ${hoody} + ${jacket} + ${pants} + ${boots}`
     }
     else if (temp <= 40 && temp > 29.9 ){
-        coat = "<img src='clothes/003-coat.png'width= 64 height= 64></img>";
-        jacket = "<img src= 'clothes/004-jacket-1.png'width= 64 height= 64></img>";
+        coat = "<img src='clothes/003-coat.png'width= 42 height= 42></img>";
+        jacket = "<img src= 'clothes/004-jacket-1.png'width=42 height= 42></img>";
+        pants = "<img src='clothes/013-trousers.png'width=42 height=42 ></img>";
+        boots = "<img src='clothes/012-boots.png'width=42 height=42 ></img>";
 
-        return `${jacket} + ${coat}`
+        return `${jacket} + ${coat} + ${pants} + ${boots}`
     }
 
     else if (temp <= 29.9){
-        coat = "<img src= 'clothes/003-coat.png'</img>";
-        hat = "<img src= 'clothes/001-winter-hat.png'</img> ";
-        scarf = "<img src= 'clothes/002-scarf.png'</img>";
-        mittins = "<img src= 'clothes/009-gloves.png '</img>";
-
-        return `${coat} + ${hat} + ${scarf} +  ${mittins}`
+        coat = "<img src= 'clothes/003-coat.png'width= 42 height= 42 </img>";
+        hat = "<img src= 'clothes/001-winter-hat.png'width= 42 height= 42</img> ";
+        scarf = "<img src= 'clothes/002-scarf.png'width= 42 height= 42</img>";
+        mittins = "<img src= 'clothes/009-gloves.png 'width= 42 height= 42</img>";
+        pants = "<img src='clothes/013-trousers.png'width=42 height=42 ></img>";
+        boots = "<img src='clothes/012-boots.png'width=42 height=42 ></img>";
+        return ` ${coat} + ${hat} + ${scarf}<br><br>
+               ${mittins} + ${pants} + ${boots}`
     }}
 
 

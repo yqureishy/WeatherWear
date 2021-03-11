@@ -47,23 +47,28 @@ button {
 .title-wear {
   width: 100%;
   columns: #fb380a;
-  font-size: 80px;
   background-image:url(./clothes/rain.gif);
   text-align: center;
 
 }
 
 .title-the{
-  font-size: 75px;
+  font-size: 50px;
   font-weight: 600;
   color: rgb(32, 62, 78);
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  position: relative;
+  top: 10px;
 }
 
 
 #WEAR {
   height:90px;
   width:90px
+}
+  height:70px;
+  width:50px
 }
 
 @media (max-width: 500px) {
