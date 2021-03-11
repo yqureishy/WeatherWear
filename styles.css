@@ -3,7 +3,8 @@ body {
   min-height: 100%;
   background: no-repeat;
   background-attachment: fixed;
-  
+}
+
 button {
   margin: 10px;
   width: 100px;
@@ -38,12 +39,6 @@ button {
   user-select: none;
 }
 
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
-}
-
 .title-wear {
   width: 100%;
   columns: #fb380a;
@@ -64,11 +59,14 @@ button {
 
 
 #WEAR {
-  height:90px;
-  width:90px
-}
   height:70px;
-  width:50px
+  width:50px;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }
 
 @media (max-width: 500px) {
