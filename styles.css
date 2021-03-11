@@ -42,3 +42,25 @@ body {
     font-size: 3.5rem;
   }
 }
+
+.title-wear {
+  width: 100%;
+  columns: #fb380a;
+  font-size: 80px;
+  background-image:url(./clothes/rain.gif);
+  text-align: center;
+
+}
+
+.title-the{
+  font-size: 75px;
+  font-weight: 600;
+  color: rgb(32, 62, 78);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+#WEAR {
+  height:90px;
+  width:90px
+}
