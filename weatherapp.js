@@ -99,7 +99,7 @@ function clothingApparel(temp) {
 
         return `${jacket} + ${coat}`
     }
-<<<<<<< HEAD
+
     else if (temp <= 30){
         coat = "<img src= 'clothes/003-coat.png'</img>";
         hat = "<img src= 'clothes/001-winter-hat.png'</img> ";
@@ -108,17 +108,7 @@ function clothingApparel(temp) {
 
         return `${coat} + ${hat} + ${scarf} +  ${mittins}`
     }}
-=======
-    else if (temp <= 29.9){
-        coat = "<img src= 'clothes/003-coat.png'width= 64 height= 64></img>";
-        hat = "<img src= 'clothes/001-winter-hat.png'width= 64 height= 64></img> ";
-        scarf = "<img src= 'clothes/002-scarf.png'width= 64 height= 64></img>";
-        return `${coat} + ${hat} + ${scarf}`
 
-  }}
-
-
->>>>>>> ab357be9cf0ad003ddcb655150aee2f794611c24
 
 
 // WEATHER BY LAT/LONG
