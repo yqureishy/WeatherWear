@@ -31,8 +31,8 @@ searchButton.addEventListener('click', function(){
             let displayTemp = ` 
                             <div class="weatherInfo">
 
-                            <div>${new Date(Date.parse(allWeather.timestamp_local)).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})} |
-                            Feels Like: ${parseInt(allWeather.app_temp)}<span>&#176;</span>F</div>
+                            <div><b>${new Date(Date.parse(allWeather.timestamp_local)).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</b></div>
+                            <div>Feels Like: ${parseInt(allWeather.app_temp)}<span>&#176;</span>F</div>
                             <div><img id="clothesDisplay"> ${clothingApparel(allWeather.app_temp)}</img></div>
                             <br>
                             <br>
