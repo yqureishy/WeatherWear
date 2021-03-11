@@ -27,6 +27,7 @@ searchButton.addEventListener('click', function(){
             
             let allWeather = ((result.data[index]))
             console.log(allWeather)
+            console.log(allWeather.weather.description)
 
             let displayTemp = ` 
                             <div class="weatherInfo">
