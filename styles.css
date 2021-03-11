@@ -1,3 +1,14 @@
+.background {
+  margin: 0;
+  background: rgb(93,144,191);
+  background: linear-gradient(180deg, rgba(93,144,191,1) 0%, rgba(150,184,215,1) 29%, rgba(212,227,237,1) 52%, rgba(239,232,235,1) 75%, rgba(235,208,212,1) 85%);
+  height: 100vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .container {
   max-width: 960px;
 }
