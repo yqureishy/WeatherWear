@@ -58,6 +58,10 @@ button {
   top: 10px;
 }
 
+.mb-3 {
+  margin: 0 !important;
+}
+
 
 #WEAR {
   height:70px;
@@ -77,5 +81,14 @@ button {
 
   button {
     width: 200px;
+  }
+
+  .title-the {
+    font-size: 30px;
+  }
+
+  #WEAR {
+    height:60px;
+    width:45px;
   }
 }
