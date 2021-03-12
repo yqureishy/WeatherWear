@@ -13,8 +13,6 @@ searchButton.addEventListener('click', function(){
 
     let city = cityNameTextBox.value
     let state = stateNameTextBox.value
-    cityNameTextBox.value = ""
-    stateNameTextBox.value = ""
 
     fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${city},${state}&key=dff6a3d2b47f4c738ef66cad6c012603&hours=48&units=I`)
     .then((response)=>{
@@ -81,10 +79,9 @@ function clothingApparel(temp) {
     }
     else if (temp <= 70 && temp > 59.9 ){
         longSleeveShirt ="<img src= 'clothes/006-longsleeve.png'width=42 height= 42></img>";
-        tshirt = "<img src='clothes/007-tshirt.png'width= 42 height= 42></img>";
         pants = "<img src='clothes/013-trousers.png'width=42 height=42 ></img>";
         sneakers = "<img src='clothes/016-sneakers.png'width=42 height=42 ></img>";
-        return `${tshirt} + ${longSleeveShirt} + ${pants} + ${sneakers}`
+        return `${longSleeveShirt} + ${pants} + ${sneakers}`
     }
     else if (temp <= 60 && temp > 49.9 ){
         longSleeveShirt="<img src= 'clothes/006-longsleeve.png' width= 42 height= 42></img>";
