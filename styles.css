@@ -40,12 +40,22 @@ button {
   user-select: none;
 }
 
+.d-flex{
+  background-color: rgb(152, 175, 248);
+  padding: 0px !important;
+  border-bottom: 0px !important;
+}
 .title-wear {
   width: 100%;
   columns: #fb380a;
-  background-image:url(./clothes/rain.gif);
+  background-image:url(./Images/wind.gif);
   text-align: center;
+  background-color: #54768c
+}
 
+.title-image {
+  background-color: #54768c;
+  background-image: url(./Images/wind.gif) ;
 }
 
 .title-the{
@@ -63,11 +73,6 @@ button {
 }
 
 
-#WEAR {
-  height:70px;
-  width:50px;
-}
-
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
@@ -83,12 +88,7 @@ button {
     width: 200px;
   }
 
-  .title-the {
-    font-size: 30px;
-  }
-
-  #WEAR {
-    height:60px;
-    width:45px;
+  .gif{
+    background-image:url(./Images/wind.gif);
   }
 }
