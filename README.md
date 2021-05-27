@@ -20,6 +20,10 @@ HTML, CSS, Javascript, Weatherbit API, Surge
 
 * **Screenshots:**
 
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Houston.png?raw=true)  |  ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Chicago.png?raw=true)
+
 ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Houston.png?raw=true)
 ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Chicago.png?raw=true)
 ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Sydney.png?raw=true)
