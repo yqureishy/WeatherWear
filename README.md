@@ -20,9 +20,9 @@ HTML, CSS, Javascript, Weatherbit API, Surge
 
 * **Screenshots:**
 
-Houston, Texas            |  Chicago, Illinois
+Houston, Texas            |  Los Angeles, California
 :-------------------------:|:-------------------------:
-![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Houston.png?raw=true)  |  ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Chicago.png?raw=true)
+![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Houston.png?raw=true)  |  ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Los_Angeles.png?raw=true)
 
 North Pole, Alaska            |  Sydney, Australia
 :-------------------------:|:-------------------------:
