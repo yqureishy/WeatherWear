@@ -2,7 +2,7 @@
 * **Live link:**
 http://weatherwear.surge.sh/
 
-![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Home_Page.png?raw=true)
+![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Logo.png?raw=true)
 
 * **Purpose of the app:** <br/><br/>
 Have you ever looked at your weather app, checked the temperature and then went outside only to realize you aren't wearing enough layers? 
@@ -20,7 +20,6 @@ HTML, CSS, Javascript, Weatherbit API, Surge
 
 * **Screenshots:**
 
-
-![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Logo.png?raw=true)
 ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Houston.png?raw=true)
 ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Chicago.png?raw=true)
+![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Sydney.png?raw=true)
