@@ -8,7 +8,7 @@ http://weather-wear.surge.sh/
 <b>Have you ever checked the temperature on a weather app and then went outside only to realize you aren't wearing enough layers?</b><br>
 For instance lets say your household thermostat is set to 75°F while the outside temperature is 41°F, so you decide to check it out for yourself just to see what it's really like. But when you step outside it doesn't really feel like 41°F because your body temperature has been accustomed to the indoor temperature, so you tell yourself a sweater will do just fine for your walk. But then 10 minutes into your walk you realize you had underestimated the temperature; and now you're just standing in one spot freezing half to death. <br><br><b>WeatherWear helps solve that issue!</b>
 
-   WeatherWear is your go-to weather app that forecasts weather for a 48-hour period on an hourly basis and SHOWS you what to wear based on the 'feels-like' temperature for any city across the world! With more than 15 clothing options and 5 temperature ranges WeatherWear helps you decide what to wear!
+   WeatherWear is your go-to weather app that SHOWS you what to wear based on the 'feels-like' temperature for any city across the world! With more than 15 clothing options and 5 temperature ranges WeatherWear helps you decide what to wear!
 
 * **Languages/Tools Used:**
 HTML, CSS, Javascript, Weatherbit API, Surge
