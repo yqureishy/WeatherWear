@@ -2,6 +2,8 @@
 * **Live link:**
 http://weatherwear.surge.sh/
 
+![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Home_Page.png?raw=true)
+
 * **Purpose of the app:** <br/><br/>
 Have you ever looked at your weather app, checked the temperature and then went outside only to realize you aren't wearing enough layers? 
 Has it ever happened to you that your household thermostat is set to 75°F while the outside temperature is 48°F,which actually feels-like 41°F. But when you step outside it doesn't really feel like 41°F because your body temperature has been accustomed to the indoor temperature, so you tell yourself a sweater will do just fine for your walk. Then, 10 minutes into your walk all of a sudden you realize you had underestimated the temperature. WeatherWear helps solve that issue!
@@ -20,5 +22,5 @@ HTML, CSS, Javascript, Weatherbit API, Surge
 
 
 ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Logo.png?raw=true)
-![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Houston.png)
-![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Chicago.png)
+![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Houston.png?raw=true)
+![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Chicago.png?raw=true)
