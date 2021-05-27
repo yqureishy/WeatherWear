@@ -1,5 +1,5 @@
 # WeatherWear
-* **Live link:***
+* **Live link:**
 http://weather-wear.surge.sh/
 
 ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Logo.png?raw=true)
