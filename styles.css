@@ -50,12 +50,13 @@ button {
   columns: #fb380a;
   background-image:url(./Images/wind.gif);
   text-align: center;
-  background-color: #54768c
+  background-color: #54768c;
 }
 
 .title-image {
   background-color: #54768c;
-  background-image: url(./Images/wind.gif) ;
+  background-image: url(./Images/wind.gif);
+  height: 135px
 }
 
 .title-the{
@@ -86,9 +87,5 @@ button {
 
   button {
     width: 200px;
-  }
-
-  .gif{
-    background-image:url(./Images/wind.gif);
   }
 }
