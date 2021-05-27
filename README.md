@@ -1,6 +1,6 @@
 # WeatherWear
 * **Live link:**
-http://weatherwear.surge.sh/
+http://weather-wear.surge.sh/
 
 ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Logo.png?raw=true)
 
@@ -20,10 +20,10 @@ HTML, CSS, Javascript, Weatherbit API, Surge
 
 * **Screenshots:**
 
-Solarized dark             |  Solarized Ocean
+Houston, Texas            |  Chicago, Illinois
 :-------------------------:|:-------------------------:
 ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Houston.png?raw=true)  |  ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Chicago.png?raw=true)
 
-![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Houston.png?raw=true)
-![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Chicago.png?raw=true)
-![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Sydney.png?raw=true)
+North Pole, Alaska            |  Sydney, Australia
+:-------------------------:|:-------------------------:
+![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/North_Pole.png?raw=true)  |  ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Sydney.png?raw=true)
