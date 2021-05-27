@@ -19,6 +19,6 @@ HTML, CSS, Javascript, Weatherbit API, Surge
 * **Screenshots:**
 
 
-![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Logo.png)
+![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Logo.png?raw=true)
 ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Houston.png)
 ![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Chicago.png)
