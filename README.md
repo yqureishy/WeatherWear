@@ -2,7 +2,7 @@
 * **Live link:**
 http://weather-wear.surge.sh/
 
-![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Logo.png?raw=true)
+![](https://github.com/yqureishy/WeatherWear/blob/master/screenshots/Home_Page.png?raw=true)
 
 * **Purpose of the app:** <br/><br/>
 <b>Have you ever checked the temperature on a weather app and then went outside only to realize you aren't wearing enough layers?</b><br>
