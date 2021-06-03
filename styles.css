@@ -48,7 +48,7 @@ button {
 .title-wear {
   width: 100%;
   columns: #fb380a;
-  background-image:url(./Images/wind.gif);
+  background-image: url(./Images/wind.gif);
   text-align: center;
   background-color: #54768c;
 }
@@ -56,7 +56,8 @@ button {
 .title-image {
   background-color: #54768c;
   background-image: url(./Images/wind.gif);
-  height: 135px
+  height: auto;
+  width: 45%
 }
 
 .title-the{
