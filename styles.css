@@ -23,6 +23,10 @@ button {
   width: 100%;
 }
 
+.flex-column{
+  flex-direction: unset !important;
+}
+
 .container {
   max-width: 960px;
   height: inherit;
