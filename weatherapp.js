@@ -13,8 +13,9 @@ searchButton.addEventListener('click', function(){
 
     let city = cityNameTextBox.value
     let state = stateNameTextBox.value
+    var APIKEY = 'b8776664423f479cab3991d9865b9e51'
 
-    fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${city},${state}&key=2312f9a02c0942b4909b80221c2b3c97&hours=48&units=I`)
+    fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${city},${state}&key=${APIKEY}&hours=48&units=I`)
     .then((response)=>{
         return (response.json())
     }).then((result)=>{
